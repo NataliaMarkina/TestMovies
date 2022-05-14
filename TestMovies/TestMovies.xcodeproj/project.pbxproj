@@ -12,6 +12,10 @@
 		E1C60653282F86D7002B4A6A /* TestMovies.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = E1C60651282F86D7002B4A6A /* TestMovies.xcdatamodeld */; };
 		E1C60655282F86DB002B4A6A /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = E1C60654282F86DB002B4A6A /* Assets.xcassets */; };
 		E1C60658282F86DB002B4A6A /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = E1C60656282F86DB002B4A6A /* LaunchScreen.storyboard */; };
+		E1C60664282F8855002B4A6A /* MoviesResponse.swift in Sources */ = {isa = PBXBuildFile; fileRef = E1C60663282F8855002B4A6A /* MoviesResponse.swift */; };
+		E1C60666282F8871002B4A6A /* MovieModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = E1C60665282F8871002B4A6A /* MovieModel.swift */; };
+		E1C60668282F888E002B4A6A /* CharacterModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = E1C60667282F888E002B4A6A /* CharacterModel.swift */; };
+		E1C6066A282F88FD002B4A6A /* PlanetModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = E1C60669282F88FD002B4A6A /* PlanetModel.swift */; };
 		EBCB9D6618948CBEEC2932A2 /* Pods_TestMovies.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 04DEDF8053CE196958CEAFE4 /* Pods_TestMovies.framework */; };
 /* End PBXBuildFile section */
 
@@ -26,6 +30,10 @@
 		E1C60654282F86DB002B4A6A /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		E1C60657282F86DB002B4A6A /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		E1C60659282F86DB002B4A6A /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		E1C60663282F8855002B4A6A /* MoviesResponse.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MoviesResponse.swift; sourceTree = "<group>"; };
+		E1C60665282F8871002B4A6A /* MovieModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MovieModel.swift; sourceTree = "<group>"; };
+		E1C60667282F888E002B4A6A /* CharacterModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CharacterModel.swift; sourceTree = "<group>"; };
+		E1C60669282F88FD002B4A6A /* PlanetModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PlanetModel.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -54,7 +62,6 @@
 				71A6CE2441AB14F9E508FB09 /* Pods-TestMovies.debug.xcconfig */,
 				7DC38F232CAA74D4256280A8 /* Pods-TestMovies.release.xcconfig */,
 			);
-			name = Pods;
 			path = Pods;
 			sourceTree = "<group>";
 		};
@@ -110,6 +117,10 @@
 		E1C60661282F87D7002B4A6A /* Models */ = {
 			isa = PBXGroup;
 			children = (
+				E1C60663282F8855002B4A6A /* MoviesResponse.swift */,
+				E1C60665282F8871002B4A6A /* MovieModel.swift */,
+				E1C60667282F888E002B4A6A /* CharacterModel.swift */,
+				E1C60669282F88FD002B4A6A /* PlanetModel.swift */,
 			);
 			path = Models;
 			sourceTree = "<group>";
@@ -218,6 +229,10 @@
 			buildActionMask = 2147483647;
 			files = (
 				E1C6064D282F86D7002B4A6A /* MainViewController.swift in Sources */,
+				E1C60664282F8855002B4A6A /* MoviesResponse.swift in Sources */,
+				E1C60666282F8871002B4A6A /* MovieModel.swift in Sources */,
+				E1C6066A282F88FD002B4A6A /* PlanetModel.swift in Sources */,
+				E1C60668282F888E002B4A6A /* CharacterModel.swift in Sources */,
 				E1C60649282F86D7002B4A6A /* AppDelegate.swift in Sources */,
 				E1C60653282F86D7002B4A6A /* TestMovies.xcdatamodeld in Sources */,
 			);
