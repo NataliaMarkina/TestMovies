@@ -17,6 +17,9 @@
 		E1C60668282F888E002B4A6A /* CharacterModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = E1C60667282F888E002B4A6A /* CharacterModel.swift */; };
 		E1C6066A282F88FD002B4A6A /* PlanetModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = E1C60669282F88FD002B4A6A /* PlanetModel.swift */; };
 		E1C6066C282F94EB002B4A6A /* ApiManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = E1C6066B282F94EB002B4A6A /* ApiManager.swift */; };
+		E1C60671282F9BBE002B4A6A /* MoviesTableView.swift in Sources */ = {isa = PBXBuildFile; fileRef = E1C60670282F9BBE002B4A6A /* MoviesTableView.swift */; };
+		E1C60673282F9BD3002B4A6A /* MoviesTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = E1C60672282F9BD3002B4A6A /* MoviesTableViewCell.swift */; };
+		E1C60676282F9D3A002B4A6A /* Stevia in Frameworks */ = {isa = PBXBuildFile; productRef = E1C60675282F9D3A002B4A6A /* Stevia */; };
 		EBCB9D6618948CBEEC2932A2 /* Pods_TestMovies.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 04DEDF8053CE196958CEAFE4 /* Pods_TestMovies.framework */; };
 /* End PBXBuildFile section */
 
@@ -36,6 +39,8 @@
 		E1C60667282F888E002B4A6A /* CharacterModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CharacterModel.swift; sourceTree = "<group>"; };
 		E1C60669282F88FD002B4A6A /* PlanetModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PlanetModel.swift; sourceTree = "<group>"; };
 		E1C6066B282F94EB002B4A6A /* ApiManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ApiManager.swift; sourceTree = "<group>"; };
+		E1C60670282F9BBE002B4A6A /* MoviesTableView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MoviesTableView.swift; sourceTree = "<group>"; };
+		E1C60672282F9BD3002B4A6A /* MoviesTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MoviesTableViewCell.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -43,6 +48,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				E1C60676282F9D3A002B4A6A /* Stevia in Frameworks */,
 				EBCB9D6618948CBEEC2932A2 /* Pods_TestMovies.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -104,6 +110,7 @@
 		E1C6065F282F87C1002B4A6A /* Views */ = {
 			isa = PBXGroup;
 			children = (
+				E1C6066F282F9B9A002B4A6A /* MoviesTableView */,
 			);
 			path = Views;
 			sourceTree = "<group>";
@@ -135,6 +142,15 @@
 			path = Services;
 			sourceTree = "<group>";
 		};
+		E1C6066F282F9B9A002B4A6A /* MoviesTableView */ = {
+			isa = PBXGroup;
+			children = (
+				E1C60670282F9BBE002B4A6A /* MoviesTableView.swift */,
+				E1C60672282F9BD3002B4A6A /* MoviesTableViewCell.swift */,
+			);
+			path = MoviesTableView;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -153,6 +169,9 @@
 			dependencies = (
 			);
 			name = TestMovies;
+			packageProductDependencies = (
+				E1C60675282F9D3A002B4A6A /* Stevia */,
+			);
 			productName = TestMovies;
 			productReference = E1C60645282F86D7002B4A6A /* TestMovies.app */;
 			productType = "com.apple.product-type.application";
@@ -181,6 +200,9 @@
 				Base,
 			);
 			mainGroup = E1C6063C282F86D7002B4A6A;
+			packageReferences = (
+				E1C60674282F9D3A002B4A6A /* XCRemoteSwiftPackageReference "Stevia" */,
+			);
 			productRefGroup = E1C60646282F86D7002B4A6A /* Products */;
 			projectDirPath = "";
 			projectRoot = "";
@@ -251,7 +273,9 @@
 			files = (
 				E1C6066C282F94EB002B4A6A /* ApiManager.swift in Sources */,
 				E1C6064D282F86D7002B4A6A /* MainViewController.swift in Sources */,
+				E1C60673282F9BD3002B4A6A /* MoviesTableViewCell.swift in Sources */,
 				E1C60664282F8855002B4A6A /* MoviesResponse.swift in Sources */,
+				E1C60671282F9BBE002B4A6A /* MoviesTableView.swift in Sources */,
 				E1C60666282F8871002B4A6A /* MovieModel.swift in Sources */,
 				E1C6066A282F88FD002B4A6A /* PlanetModel.swift in Sources */,
 				E1C60668282F888E002B4A6A /* CharacterModel.swift in Sources */,
@@ -468,6 +492,25 @@
 			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
+
+/* Begin XCRemoteSwiftPackageReference section */
+		E1C60674282F9D3A002B4A6A /* XCRemoteSwiftPackageReference "Stevia" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/freshOS/Stevia";
+			requirement = {
+				kind = upToNextMajorVersion;
+				minimumVersion = 5.0.0;
+			};
+		};
+/* End XCRemoteSwiftPackageReference section */
+
+/* Begin XCSwiftPackageProductDependency section */
+		E1C60675282F9D3A002B4A6A /* Stevia */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = E1C60674282F9D3A002B4A6A /* XCRemoteSwiftPackageReference "Stevia" */;
+			productName = Stevia;
+		};
+/* End XCSwiftPackageProductDependency section */
 
 /* Begin XCVersionGroup section */
 		E1C60651282F86D7002B4A6A /* TestMovies.xcdatamodeld */ = {
