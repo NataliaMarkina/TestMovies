@@ -6,5 +6,6 @@ target 'TestMovies' do
   use_frameworks!
 
   # Pods for TestMovies
+  pod 'Alamofire'
 
 end
