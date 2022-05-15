@@ -25,24 +25,29 @@ class ApiManager {
             }
     }
 
-    func getCharacters(urlsCharacters: [String]?, completed: @escaping ([CharacterModel])->(), error: @escaping (AFError)->()) {
-        guard let urlsCharacters = urlsCharacters else { return }
+    func getCharacters(charactersUrls: [String]?, completed: @escaping ([CharacterModel])->(), error: @escaping (AFError)->()) {
+        guard let charactersUrls = charactersUrls else { return }
         var characters: [CharacterModel] = []
+        let dispatchGroup = DispatchGroup()
 
-        for url in urlsCharacters {
+        for url in charactersUrls {
+            dispatchGroup.enter()
             AF.request(url)
                 .responseDecodable(of: CharacterModel.self) { response in
                     switch response.result {
-                    case .success(_):
-                        guard let character = response.value else { return }
+                    case .success(let character):
                         characters.append(character)
+                        dispatchGroup.leave()
                     case .failure(let errorDescription):
                         error(errorDescription)
                     }
                 }
         }
 
-        completed(characters)
+        dispatchGroup.notify(queue: .main) {
+            completed(characters)
+        }
+
     }
 
     func getPlanet(url: String?, completed: @escaping (PlanetModel)->(), error: @escaping (AFError)->()) {

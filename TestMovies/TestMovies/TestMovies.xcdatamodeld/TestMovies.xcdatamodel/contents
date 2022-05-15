@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8" standalone="yes"?>
 <model type="com.apple.IDECoreDataModeler.DataModel" documentVersion="1.0" lastSavedToolsVersion="19574" systemVersion="20E241" minimumToolsVersion="Automatic" sourceLanguage="Swift" userDefinedModelVersionIdentifier="">
-    <entity name="Character" representedClassName="Character" syncable="YES" codeGenerationType="class">
+    <entity name="Character" representedClassName=".Character" syncable="YES" codeGenerationType="class">
         <attribute name="birthYear" optional="YES" attributeType="String"/>
         <attribute name="created" optional="YES" attributeType="String"/>
         <attribute name="edited" optional="YES" attributeType="String"/>
@@ -20,7 +20,7 @@
         <relationship name="ofMovie" optional="YES" toMany="YES" deletionRule="Nullify" destinationEntity="Movie" inverseName="allCharacters" inverseEntity="Movie"/>
         <relationship name="planet" optional="YES" maxCount="1" deletionRule="Cascade" destinationEntity="Planet" inverseName="ofCharacter" inverseEntity="Planet"/>
     </entity>
-    <entity name="Movie" representedClassName="Movie" syncable="YES" codeGenerationType="class">
+    <entity name="Movie" representedClassName=".Movie" syncable="YES" codeGenerationType="class">
         <attribute name="characters" optional="YES" attributeType="Transformable" customClassName="[String]"/>
         <attribute name="created" optional="YES" attributeType="String"/>
         <attribute name="director" optional="YES" attributeType="String"/>

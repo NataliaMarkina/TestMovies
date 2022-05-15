@@ -10,7 +10,7 @@ import Stevia
 import CoreData
 
 protocol MoviesTableViewDelegate: AnyObject {
-    func openCharacters(urls: [String])
+    func openCharacters(urls: [String], currentMovie: Movie?)
 }
 
 class MoviesTableView: UITableView {
@@ -68,6 +68,7 @@ extension MoviesTableView: UITableViewDelegate, UITableViewDataSource {
         } else if let movie = fetchedhResultController?.object(at: indexPath) as? Movie {
             cell.movie = movie
         }
+        cell.selectionStyle = .none
         return cell
     }
 
@@ -76,7 +77,7 @@ extension MoviesTableView: UITableViewDelegate, UITableViewDataSource {
               let characters = movie.characters
         else { return }
 
-        viewDelegate?.openCharacters(urls: characters)
+        viewDelegate?.openCharacters(urls: characters, currentMovie: movie)
     }
 }
 

@@ -106,7 +106,11 @@ class MainViewController: UIViewController {
 }
 
 extension MainViewController: MoviesTableViewDelegate {
-    func openCharacters(urls: [String]) {
+    func openCharacters(urls: [String], currentMovie: Movie?) {
+        let charactersVC = CharactersViewController()
+        charactersVC.charactersUrls = urls
+        charactersVC.openedMovie = currentMovie
+        navigationController?.pushViewController(charactersVC, animated: true)
     }
 }
 
