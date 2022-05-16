@@ -29,7 +29,6 @@ class MainViewController: UIViewController {
 
     override func viewDidLoad() {
         super.viewDidLoad()
-
         view.backgroundColor = .white
 
         setupNavigationBar()
@@ -43,9 +42,12 @@ class MainViewController: UIViewController {
     }
 
     private func setupNavigationBar() {
-        edgesForExtendedLayout = []
-        navigationController?.navigationBar.isTranslucent = false
         navigationItem.searchController = searchController
+        navigationItem.searchController?.searchResultsUpdater = self
+        navigationController?.navigationBar.isTranslucent = true
+        definesPresentationContext = true
+        navigationItem.hidesSearchBarWhenScrolling = false
+        navigationItem.largeTitleDisplayMode = .never
 
         setupBackButton()
     }

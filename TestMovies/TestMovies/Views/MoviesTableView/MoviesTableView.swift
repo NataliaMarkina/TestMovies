@@ -32,7 +32,7 @@ class MoviesTableView: UITableView {
     }()
 
     init(viewDelegate: MoviesTableViewDelegate?) {
-        super.init(frame: .zero, style: .grouped)
+        super.init(frame: .zero, style: .plain)
 
         self.viewDelegate = viewDelegate
         configTableView()
@@ -49,6 +49,7 @@ class MoviesTableView: UITableView {
         backgroundColor = .white
         separatorStyle = .singleLine
         showsVerticalScrollIndicator = false
+        tableFooterView = UIView()
         register(MoviesTableViewCell.self, forCellReuseIdentifier: "movieCell")
     }
 }

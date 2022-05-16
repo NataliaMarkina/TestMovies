@@ -23,6 +23,22 @@ extension UIViewController {
         }
     }
 
+    var safeAreaInsets: UIEdgeInsets? {
+        return UIApplication.shared.keyWindow?.safeAreaInsets
+    }
+
+    var insets: UIEdgeInsets {
+        let safeArea = safeAreaInsets ?? .zero
+        let navBarHeight = navigationController?.navigationBar.frame.height ?? 0
+        let insets: UIEdgeInsets = .init(
+            top: safeArea.top + navBarHeight,
+            left: safeArea.left,
+            bottom: safeArea.bottom,
+            right: safeArea.right
+        )
+        return insets
+    }
+
     func startIndicatingActivity() {
         DispatchQueue.main.async {
             self.view.addSubview(self.indicator)

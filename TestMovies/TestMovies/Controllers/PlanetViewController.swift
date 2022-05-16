@@ -61,7 +61,7 @@ class PlanetViewController: UIViewController {
 
     private func setupSubviews() {
         view.subviews(stackContainer)
-        stackContainer.top(16).left(16).right(16)
+        stackContainer.top(insets.top + 16).left(16).right(16)
     }
 
     private func loadData() {
