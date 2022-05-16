@@ -57,8 +57,7 @@ class PlanetViewController: UIViewController {
 
     private func setupNavigationBar() {
         navigationItem.title = openedCharacter?.name ?? ""
-        edgesForExtendedLayout = []
-        navigationController?.navigationBar.isTranslucent = false
+        navigationController?.navigationBar.titleTextAttributes = [NSAttributedString.Key.foregroundColor: UIColor.orange]
     }
 
     private func setupSubviews() {

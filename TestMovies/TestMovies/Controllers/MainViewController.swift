@@ -31,7 +31,8 @@ class MainViewController: UIViewController {
         super.viewDidLoad()
 
         view.backgroundColor = .white
-        navigationItem.searchController = searchController
+
+        setupNavigationBar()
         setupSubviews()
         loadData()
     }
@@ -39,6 +40,24 @@ class MainViewController: UIViewController {
     private func setupSubviews() {
         view.subviews(tableView)
         tableView.fillContainer()
+    }
+
+    private func setupNavigationBar() {
+        edgesForExtendedLayout = []
+        navigationController?.navigationBar.isTranslucent = false
+        navigationItem.searchController = searchController
+
+        setBackButton()
+    }
+
+    private func setBackButton() {
+        navigationItem.backBarButtonItem = UIBarButtonItem(
+            title: "",
+            style: .plain,
+            target: nil,
+            action: nil
+        )
+        navigationController?.navigationBar.tintColor = .orange
     }
 
     private func loadData() {
