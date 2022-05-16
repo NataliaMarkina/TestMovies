@@ -19,19 +19,15 @@ class CharactersTableViewCell: UITableViewCell {
         l.font = .systemFont(ofSize: 16, weight: .bold)
     }
 
-    private lazy var genderLabel = UILabel().style(genderLabelStyle)
-    private func genderLabelStyle(l: UILabel) {
-        l.font = .systemFont(ofSize: 14)
-    }
+    private lazy var genderLabel = UILabel().style(labelStyle)
+    private lazy var birthYearLabel = UILabel().style(labelStyle)
 
-    private lazy var birthYearLabel = UILabel().style(birthYearLabelStyle)
-    private func birthYearLabelStyle(l: UILabel) {
+    private func labelStyle(l: UILabel) {
         l.font = .systemFont(ofSize: 14)
     }
 
     override init(style: UITableViewCell.CellStyle, reuseIdentifier: String?) {
         super.init(style: style, reuseIdentifier: reuseIdentifier)
-
         setupSubviews()
     }
 
