@@ -71,8 +71,8 @@ class MainViewController: UIViewController {
             ApiManager.shared.getMovies { [weak self] movies in
                 guard let self = self else { return }
                 self.saveInCoreData(movies: movies)
-            } error: { error in
-                return
+            } error: { _ in
+                self.showAlertError()
             }
         }
     }

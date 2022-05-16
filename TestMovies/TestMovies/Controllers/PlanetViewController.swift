@@ -77,8 +77,8 @@ class PlanetViewController: UIViewController {
         ApiManager.shared.getPlanet(url: openedCharacter?.homeworld) { [weak self] planet in
             guard let self = self else { return }
             self.saveInCoreData(planetModel: planet)
-        } error: { error in
-            return
+        } error: { _ in
+            self.showAlertError()
         }
     }
 

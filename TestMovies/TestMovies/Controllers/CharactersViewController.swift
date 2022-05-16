@@ -55,13 +55,17 @@ class CharactersViewController: UIViewController {
         let characters = getSavedData()
 
         if characters?.isEmpty ?? false {
-            ApiManager.shared.getCharacters(charactersUrls: charactersUrls) { characters in
-                self.saveInCoreData(characters: characters)
-            } error: { error in
-                return
-            }
+            getCharacters()
         } else {
             tableView.characters = characters
+        }
+    }
+
+    private func getCharacters() {
+        ApiManager.shared.getCharacters(charactersUrls: charactersUrls) { characters in
+            self.saveInCoreData(characters: characters)
+        } error: { _ in
+            self.showAlertError()
         }
     }
 

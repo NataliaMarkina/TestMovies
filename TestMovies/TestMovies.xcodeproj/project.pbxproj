@@ -25,6 +25,7 @@
 		E1C6067B282FB7AC002B4A6A /* CharactersTableView.swift in Sources */ = {isa = PBXBuildFile; fileRef = E1C6067A282FB7AC002B4A6A /* CharactersTableView.swift */; };
 		E1C6067D282FB7CC002B4A6A /* CharactersViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E1C6067C282FB7CC002B4A6A /* CharactersViewController.swift */; };
 		E1C6068128314E62002B4A6A /* PlanetViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E1C6068028314E62002B4A6A /* PlanetViewController.swift */; };
+		E1C6068628329767002B4A6A /* UIViewControllerExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = E1C6068528329767002B4A6A /* UIViewControllerExtension.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -49,6 +50,7 @@
 		E1C6067A282FB7AC002B4A6A /* CharactersTableView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CharactersTableView.swift; sourceTree = "<group>"; };
 		E1C6067C282FB7CC002B4A6A /* CharactersViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CharactersViewController.swift; sourceTree = "<group>"; };
 		E1C6068028314E62002B4A6A /* PlanetViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PlanetViewController.swift; sourceTree = "<group>"; };
+		E1C6068528329767002B4A6A /* UIViewControllerExtension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UIViewControllerExtension.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -102,6 +104,7 @@
 		E1C60647282F86D7002B4A6A /* TestMovies */ = {
 			isa = PBXGroup;
 			children = (
+				E1C6068428329713002B4A6A /* Helpers */,
 				E1C60662282F87E0002B4A6A /* Services */,
 				E1C60661282F87D7002B4A6A /* Models */,
 				E1C60660282F87CB002B4A6A /* Controllers */,
@@ -169,6 +172,14 @@
 				E1C60678282FB798002B4A6A /* CharactersTableViewCell.swift */,
 			);
 			path = CharactersTableView;
+			sourceTree = "<group>";
+		};
+		E1C6068428329713002B4A6A /* Helpers */ = {
+			isa = PBXGroup;
+			children = (
+				E1C6068528329767002B4A6A /* UIViewControllerExtension.swift */,
+			);
+			path = Helpers;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -293,6 +304,7 @@
 			files = (
 				E1C6066C282F94EB002B4A6A /* ApiManager.swift in Sources */,
 				E1C60679282FB798002B4A6A /* CharactersTableViewCell.swift in Sources */,
+				E1C6068628329767002B4A6A /* UIViewControllerExtension.swift in Sources */,
 				E1C6068128314E62002B4A6A /* PlanetViewController.swift in Sources */,
 				E1C6064D282F86D7002B4A6A /* MainViewController.swift in Sources */,
 				E1C60673282F9BD3002B4A6A /* MoviesTableViewCell.swift in Sources */,
