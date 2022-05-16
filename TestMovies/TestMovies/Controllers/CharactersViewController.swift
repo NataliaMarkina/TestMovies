@@ -30,9 +30,7 @@ class CharactersViewController: UIViewController {
     }
 
     private func setupNavigationBar() {
-        navigationItem.title = openedMovie?.title ?? ""
-        navigationController?.navigationBar.titleTextAttributes = [NSAttributedString.Key.foregroundColor: UIColor.orange]
-
+        setupTitleController(title: openedMovie?.title)
         setupBackButton()
     }
 

@@ -56,9 +56,7 @@ class PlanetViewController: UIViewController {
     }
 
     private func setupNavigationBar() {
-        navigationItem.title = openedCharacter?.name ?? ""
-        navigationController?.navigationBar.titleTextAttributes = [NSAttributedString.Key.foregroundColor: UIColor.orange]
-        
+        setupTitleController(title: openedCharacter?.name)
         setupBackButton()
     }
 

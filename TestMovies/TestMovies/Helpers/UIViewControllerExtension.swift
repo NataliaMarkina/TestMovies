@@ -26,7 +26,7 @@ extension UIViewController {
         present(alertController, animated: true, completion: nil)
     }
 
-    public func setupBackButton() {
+    func setupBackButton() {
         navigationItem.backBarButtonItem = UIBarButtonItem(
             title: "",
             style: .plain,
@@ -34,5 +34,10 @@ extension UIViewController {
             action: nil
         )
         navigationController?.navigationBar.tintColor = .orange
+    }
+
+    func setupTitleController(title: String?) {
+        navigationItem.title = title ?? ""
+        navigationController?.navigationBar.titleTextAttributes = [NSAttributedString.Key.foregroundColor: UIColor.orange]
     }
 }
