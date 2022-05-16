@@ -24,7 +24,7 @@ class CharactersViewController: UIViewController {
 
         view.backgroundColor = .white
         navigationItem.title = openedMovie?.title ?? ""
-        
+
         setupSubviews()
         loadData()
     }
@@ -116,7 +116,9 @@ class CharactersViewController: UIViewController {
 }
 
 extension CharactersViewController: CharactersTableViewDelegate {
-    func openPlanetInfo(url: String) {
-
+    func openPlanetInfo(currentCharacter: Character) {
+        let planetVC = PlanetViewController()
+        planetVC.openedCharacter = currentCharacter
+        navigationController?.pushViewController(planetVC, animated: true)
     }
 }

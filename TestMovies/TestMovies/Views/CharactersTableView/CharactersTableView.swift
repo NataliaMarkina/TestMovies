@@ -9,7 +9,7 @@ import UIKit
 import Stevia
 
 protocol CharactersTableViewDelegate: AnyObject {
-    func openPlanetInfo(url: String)
+    func openPlanetInfo(currentCharacter: Character)
 }
 
 class CharactersTableView: UITableView {
@@ -58,8 +58,8 @@ extension CharactersTableView: UITableViewDelegate, UITableViewDataSource {
     }
 
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
-        guard let url = characters?[indexPath.row].homeworld else { return }
+        guard let character = characters?[indexPath.row] else { return }
 
-        viewDelegate?.openPlanetInfo(url: url)
+        viewDelegate?.openPlanetInfo(currentCharacter: character)
     }
 }

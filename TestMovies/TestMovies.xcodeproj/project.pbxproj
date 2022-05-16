@@ -24,6 +24,7 @@
 		E1C60679282FB798002B4A6A /* CharactersTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = E1C60678282FB798002B4A6A /* CharactersTableViewCell.swift */; };
 		E1C6067B282FB7AC002B4A6A /* CharactersTableView.swift in Sources */ = {isa = PBXBuildFile; fileRef = E1C6067A282FB7AC002B4A6A /* CharactersTableView.swift */; };
 		E1C6067D282FB7CC002B4A6A /* CharactersViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E1C6067C282FB7CC002B4A6A /* CharactersViewController.swift */; };
+		E1C6068128314E62002B4A6A /* PlanetViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E1C6068028314E62002B4A6A /* PlanetViewController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -47,6 +48,7 @@
 		E1C60678282FB798002B4A6A /* CharactersTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CharactersTableViewCell.swift; sourceTree = "<group>"; };
 		E1C6067A282FB7AC002B4A6A /* CharactersTableView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CharactersTableView.swift; sourceTree = "<group>"; };
 		E1C6067C282FB7CC002B4A6A /* CharactersViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CharactersViewController.swift; sourceTree = "<group>"; };
+		E1C6068028314E62002B4A6A /* PlanetViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PlanetViewController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -127,6 +129,7 @@
 			children = (
 				E1C6064C282F86D7002B4A6A /* MainViewController.swift */,
 				E1C6067C282FB7CC002B4A6A /* CharactersViewController.swift */,
+				E1C6068028314E62002B4A6A /* PlanetViewController.swift */,
 			);
 			path = Controllers;
 			sourceTree = "<group>";
@@ -290,6 +293,7 @@
 			files = (
 				E1C6066C282F94EB002B4A6A /* ApiManager.swift in Sources */,
 				E1C60679282FB798002B4A6A /* CharactersTableViewCell.swift in Sources */,
+				E1C6068128314E62002B4A6A /* PlanetViewController.swift in Sources */,
 				E1C6064D282F86D7002B4A6A /* MainViewController.swift in Sources */,
 				E1C60673282F9BD3002B4A6A /* MoviesTableViewCell.swift in Sources */,
 				E1C60664282F8855002B4A6A /* MoviesResponse.swift in Sources */,
