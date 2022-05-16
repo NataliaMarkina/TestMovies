@@ -48,6 +48,7 @@ class MoviesTableView: UITableView {
 
         backgroundColor = .white
         separatorStyle = .singleLine
+        showsVerticalScrollIndicator = false
         register(MoviesTableViewCell.self, forCellReuseIdentifier: "movieCell")
     }
 }

@@ -38,6 +38,7 @@ class CharactersTableView: UITableView {
         backgroundColor = .white
         separatorStyle = .singleLine
         tableFooterView = UIView()
+        showsVerticalScrollIndicator = false
         register(CharactersTableViewCell.self, forCellReuseIdentifier: "characterCell")
     }
 }

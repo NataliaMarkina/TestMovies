@@ -19,14 +19,12 @@ class MoviesTableViewCell: UITableViewCell {
         l.font = .systemFont(ofSize: 16, weight: .bold)
     }
 
-    private lazy var directorLabel = UILabel().style(directorLabelStyle)
-    private func directorLabelStyle(l: UILabel) {
-        l.font = .systemFont(ofSize: 14)
-    }
+    private lazy var directorLabel = UILabel().style(labelStyle)
+    private lazy var producerLabel = UILabel().style(labelStyle)
 
-    private lazy var producerLabel = UILabel().style(producerLabelStyle)
-    private func producerLabelStyle(l: UILabel) {
+    private func labelStyle(l: UILabel) {
         l.font = .systemFont(ofSize: 14)
+        l.numberOfLines = 0
     }
 
     private lazy var releaseDateLabel = UILabel().style(releaseDateLabelStyle)
@@ -62,21 +60,21 @@ class MoviesTableViewCell: UITableViewCell {
 
         layout([
             6,
-            |-titleLabel-|,
+            |-16-titleLabel-16-|,
             4,
-            |-directorLabel-|,
+            |-16-directorLabel-16-|,
             4,
-            |-producerLabel-|,
+            |-16-producerLabel-16-|,
             4,
-            |-releaseDateLabel-|,
+            |-16-releaseDateLabel-16-|,
             6
         ])
     }
 
     private func fillData() {
         titleLabel.text = movie?.title
-        directorLabel.text = movie?.director
-        producerLabel.text = movie?.producer
+        directorLabel.text = "Директор: \(movie?.director ?? "")"
+        producerLabel.text = "Продюссеры: \(movie?.producer ?? "")"
         releaseDateLabel.text = movie?.releaseDate
     }
 }

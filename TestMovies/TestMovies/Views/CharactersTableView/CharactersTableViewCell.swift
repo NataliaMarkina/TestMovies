@@ -54,11 +54,11 @@ class CharactersTableViewCell: UITableViewCell {
 
         layout([
             6,
-            |-nameLabel-|,
+            |-16-nameLabel-16-|,
             4,
-            |-genderLabel-|,
+            |-16-genderLabel-16-|,
             4,
-            |-birthYearLabel-|,
+            |-16-birthYearLabel-16-|,
             6
         ])
     }
