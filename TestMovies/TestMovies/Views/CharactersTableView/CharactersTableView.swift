@@ -21,7 +21,7 @@ class CharactersTableView: UITableView {
     }
 
     init(viewDelegate: CharactersTableViewDelegate?) {
-        super.init(frame: .zero, style: .grouped)
+        super.init(frame: .zero, style: .plain)
 
         self.viewDelegate = viewDelegate
         configTableView()
@@ -37,6 +37,7 @@ class CharactersTableView: UITableView {
 
         backgroundColor = .white
         separatorStyle = .singleLine
+        tableFooterView = UIView()
         register(CharactersTableViewCell.self, forCellReuseIdentifier: "characterCell")
     }
 }
