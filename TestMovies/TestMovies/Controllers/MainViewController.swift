@@ -47,17 +47,7 @@ class MainViewController: UIViewController {
         navigationController?.navigationBar.isTranslucent = false
         navigationItem.searchController = searchController
 
-        setBackButton()
-    }
-
-    private func setBackButton() {
-        navigationItem.backBarButtonItem = UIBarButtonItem(
-            title: "",
-            style: .plain,
-            target: nil,
-            action: nil
-        )
-        navigationController?.navigationBar.tintColor = .orange
+        setupBackButton()
     }
 
     private func loadData() {

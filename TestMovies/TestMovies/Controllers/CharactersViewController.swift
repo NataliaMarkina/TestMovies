@@ -33,22 +33,12 @@ class CharactersViewController: UIViewController {
         navigationItem.title = openedMovie?.title ?? ""
         navigationController?.navigationBar.titleTextAttributes = [NSAttributedString.Key.foregroundColor: UIColor.orange]
 
-        setBackButton()
+        setupBackButton()
     }
 
     private func setupSubviews() {
         view.subviews(tableView)
         tableView.fillContainer()
-    }
-
-    private func setBackButton() {
-        navigationItem.backBarButtonItem = UIBarButtonItem(
-            title: "",
-            style: .plain,
-            target: nil,
-            action: nil
-        )
-        navigationController?.navigationBar.tintColor = .orange
     }
 
     private func loadData() {

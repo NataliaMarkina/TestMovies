@@ -25,4 +25,14 @@ extension UIViewController {
 
         present(alertController, animated: true, completion: nil)
     }
+
+    public func setupBackButton() {
+        navigationItem.backBarButtonItem = UIBarButtonItem(
+            title: "",
+            style: .plain,
+            target: nil,
+            action: nil
+        )
+        navigationController?.navigationBar.tintColor = .orange
+    }
 }
