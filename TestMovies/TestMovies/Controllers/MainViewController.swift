@@ -58,10 +58,14 @@ class MainViewController: UIViewController {
         }
 
         if isEmptySavedData() {
+            startIndicatingActivity()
+
             ApiManager.shared.getMovies { [weak self] movies in
                 guard let self = self else { return }
                 self.saveInCoreData(movies: movies)
+                self.stopIndicatingActivity()
             } error: { _ in
+                self.stopIndicatingActivity()
                 self.showAlertError()
             }
         }

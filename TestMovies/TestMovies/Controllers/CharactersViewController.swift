@@ -50,9 +50,14 @@ class CharactersViewController: UIViewController {
     }
 
     private func getCharacters() {
-        ApiManager.shared.getCharacters(charactersUrls: charactersUrls) { characters in
+        startIndicatingActivity()
+
+        ApiManager.shared.getCharacters(charactersUrls: charactersUrls) { [weak self] characters in
+            guard let self = self else { return }
             self.saveInCoreData(characters: characters)
+            self.stopIndicatingActivity()
         } error: { _ in
+            self.stopIndicatingActivity()
             self.showAlertError()
         }
     }

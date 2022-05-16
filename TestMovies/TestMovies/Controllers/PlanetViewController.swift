@@ -74,10 +74,14 @@ class PlanetViewController: UIViewController {
     }
 
     private func getPlanet() {
+        startIndicatingActivity()
+
         ApiManager.shared.getPlanet(url: openedCharacter?.homeworld) { [weak self] planet in
             guard let self = self else { return }
             self.saveInCoreData(planetModel: planet)
+            self.stopIndicatingActivity()
         } error: { _ in
+            self.stopIndicatingActivity()
             self.showAlertError()
         }
     }
