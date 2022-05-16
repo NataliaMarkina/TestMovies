@@ -21,7 +21,6 @@ class CharactersViewController: UIViewController {
 
     override func viewDidLoad() {
         super.viewDidLoad()
-
         view.backgroundColor = .white
 
         setupNavigationBar()
@@ -118,7 +117,6 @@ class CharactersViewController: UIViewController {
         let context = appDelegate.persistentContainer.viewContext
 
         guard let charactersEntities = characters.map({ createMovieEntity(characterModel: $0) }) as? [Character] else { return }
-
         saveCharacters(charactersEntities: charactersEntities)
 
         do {

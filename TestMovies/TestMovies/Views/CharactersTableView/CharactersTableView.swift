@@ -61,7 +61,6 @@ extension CharactersTableView: UITableViewDelegate, UITableViewDataSource {
 
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         guard let character = characters?[indexPath.row] else { return }
-
         viewDelegate?.openPlanetInfo(currentCharacter: character)
     }
 }
