@@ -11,10 +11,6 @@ import Stevia
 
 class MainViewController: UIViewController {
 
-    var searchedMovies: [Movie]? {
-        didSet { tableView.searchedMovies = searchedMovies }
-    }
-
     lazy var tableView = MoviesTableView(viewDelegate: self)
 
     lazy var searchController: UISearchController = {
@@ -53,32 +49,34 @@ class MainViewController: UIViewController {
     }
 
     private func loadData() {
-        do {
-            try tableView.fetchedhResultController?.performFetch()
-        } catch let error  {
-            print("ERROR: \(error)")
-        }
+        let movies = getSavedData()
 
-        if isEmptySavedData() {
-            startIndicatingActivity()
-
-            ApiManager.shared.getMovies { [weak self] movies in
-                guard let self = self else { return }
-                self.saveInCoreData(movies: movies)
-                self.stopIndicatingActivity()
-            } error: { _ in
-                self.stopIndicatingActivity()
-                self.showAlertError()
-            }
+        if movies?.isEmpty ?? false {
+            getMovies()
+        } else {
+            tableView.movies = movies
         }
     }
 
-    private func isEmptySavedData() -> Bool {
-        guard let appDelegate = UIApplication.shared.delegate as? AppDelegate else { return true }
+    private func getMovies() {
+        startIndicatingActivity()
+        
+        ApiManager.shared.getMovies { [weak self] movies in
+            guard let self = self else { return }
+            self.saveInCoreData(movies: movies)
+            self.stopIndicatingActivity()
+        } error: { _ in
+            self.stopIndicatingActivity()
+            self.showAlertError()
+        }
+    }
+
+    private func getSavedData() -> [Movie]? {
+        guard let appDelegate = UIApplication.shared.delegate as? AppDelegate else { return nil }
         let context = appDelegate.persistentContainer.viewContext
         let fetchRequest = Movie.fetchRequest()
-        let objects = try? context.fetch(fetchRequest)
-        return objects?.isEmpty ?? true
+        let movies = try? context.fetch(fetchRequest)
+        return movies
     }
 
     private func createMovieEntity(movieModel: MovieModel) -> NSManagedObject? {
@@ -110,7 +108,8 @@ class MainViewController: UIViewController {
         else { return }
         let context = appDelegate.persistentContainer.viewContext
 
-        _ = movies.map { createMovieEntity(movieModel: $0) }
+        guard let moviesEntities = movies.map({ createMovieEntity(movieModel: $0) }) as? [Movie] else { return }
+        tableView.movies = moviesEntities
 
         do {
             try context.save()
@@ -141,12 +140,12 @@ extension MainViewController: UISearchBarDelegate, UISearchResultsUpdating, UISe
             let fetchRequest = Movie.fetchRequest()
             fetchRequest.predicate = predicate
             do {
-                searchedMovies = try context.fetch(fetchRequest)
+                tableView.movies = try context.fetch(fetchRequest)
             } catch let error as NSError {
                 print("Could not fetch. \(error)")
             }
         } else {
-            searchedMovies = nil
+            tableView.movies = getSavedData()
         }
     }
 }
