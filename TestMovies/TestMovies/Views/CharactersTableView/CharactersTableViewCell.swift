@@ -61,7 +61,7 @@ class CharactersTableViewCell: UITableViewCell {
 
     private func fillData() {
         nameLabel.text = character?.name
-        genderLabel.text = character?.gender
-        birthYearLabel.text = character?.birthYear
+        genderLabel.text = "Пол: \(character?.gender ?? "")"
+        birthYearLabel.text = "Год рождения: \(character?.birthYear ?? "")"
     }
 }
